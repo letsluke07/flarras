@@ -3,7 +3,12 @@ name = "client"
 version = "0.1.0"
 edition = "2024"
 
+[dependencies]
+console_error_panic_hook = "0.1.7"
+shared = { path = "../shared" }
+sim = { path = "../sim" }
+
 [dependencies.bevy]
 version = "0.20.0"
 default-features = false
-features = ["webgpu", "ui"]
+features = ["webgpu", "ui", "bevy_log", "debug"]

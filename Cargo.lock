@@ -812,6 +812,7 @@ dependencies = [
  "indexmap",
  "log",
  "nonmax",
+ "rand",
  "serde",
  "slotmap",
  "smallvec",
@@ -2120,6 +2121,9 @@ name = "client"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "console_error_panic_hook",
+ "shared",
+ "sim",
 ]
 
 [[package]]
