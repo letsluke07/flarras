@@ -21,4 +21,4 @@ impl Default for GameConfig {
             player_speed: 150.0,
         }
     }
-}
+} 
