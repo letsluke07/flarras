@@ -426,19 +426,28 @@ fn run_sim(world: &mut World) {
 
 fn show_game_over(
     state: Res<GameState>,
+    local: Option<Res<LocalPlayer>>,
+    positions: Query<&Position>,
     existing: Query<(), With<GameOverOverlay>>,
     mut commands: Commands,
 ) {
     if *state != GameState::Dead || !existing.is_empty() {
         return;
     }
+
+    let pos = local
+        .as_ref()
+        .and_then(|l| positions.get(l.0).ok())
+        .map(|p| p.0)
+        .unwrap_or(Vec2::ZERO);
+    
     commands.spawn((
         GameOverOverlay,
         Text2d::new("You died!\nClick to restart"),
         TextFont::from_font_size(48.0),
         TextColor(Color::BLACK),
         TextLayout::justify(Justify::Center),
-        Transform::from_xyz(0.0, 0.0, 100.0),
+        Transform::from_xyz(pos.x, pos.y, 100.0),
     ));
 }
 
