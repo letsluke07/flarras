@@ -1,14 +1,14 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use bevy::prelude::*;
+use lightyear::prelude::*;
+use serde::{Deserialize, Serialize};
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(Component, Serialize, Deserialize, Clone, Debug, PartialEq)]
+pub struct TestPosition(pub Vec2);
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+pub struct ProtocolPlugin;
+
+impl Plugin for ProtocolPlugin {
+    fn build(&self, app: &mut App) {
+        app.component::<TestPosition>().replicate();
     }
 }

@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bevy = { workspace = true, features = ["ui", "webgpu"] }
+console_error_panic_hook = "0.1.7"
+lightyear = { workspace = true }
+shared = { path = "../shared" }
