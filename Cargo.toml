@@ -4,4 +4,6 @@ members = ["client", "server", "shared", "sim"]
 
 [workspace.dependencies]
 bevy = { version = "0.20.1", default-features = false }
+console_error_panic_hook = "0.1.7"
 lightyear = "0.31.0"
+serde = "1.0.229"

@@ -1,6 +1,6 @@
 use bevy::prelude::*;
-use shared::ProtocolPlugin;
 use lightyear::prelude::client::*;
+use shared::*;
 
 fn main() {
     console_error_panic_hook::set_once();
@@ -14,7 +14,7 @@ fn main() {
             ..default()
         }))
         .add_plugins(ClientPlugins {
-            tick_duration: std::time::Duration::from_secs_f64(1.0 / 64.0),
+            tick_duration: std::time::Duration::from_secs_f64(1.0 / TICK_HZ),
         })
         .add_plugins(ProtocolPlugin)
         .run();

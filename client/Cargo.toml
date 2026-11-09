@@ -5,6 +5,12 @@ edition = "2024"
 
 [dependencies]
 bevy = { workspace = true, features = ["ui", "webgpu"] }
-console_error_panic_hook = "0.1.7"
-lightyear = { workspace = true }
+console_error_panic_hook = { workspace = true }
+lightyear = { workspace = true, features = [
+    "std",
+    "client",
+    "replication",
+    "raw_connection",
+    "webtransport",
+] }
 shared = { path = "../shared" }

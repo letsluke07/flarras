@@ -6,4 +6,4 @@ edition = "2024"
 [dependencies]
 bevy = { workspace = true }
 lightyear = { workspace = true }
-serde = "1.0.229"
+serde = { workspace = true, features = ["derive"] }

@@ -5,5 +5,11 @@ edition = "2024"
 
 [dependencies]
 bevy = { workspace = true }
-lightyear = { workspace = true }
+lightyear = { workspace = true, features = [
+    "std",
+    "server",
+    "replication",
+    "raw_connection",
+    "webtransport",
+] }
 shared = { path = "../shared" }

@@ -1,3 +1,7 @@
 [watch]
 watch = [".."]
 ignore = ["../target", "../.git"]
+
+[serve]
+tls_key_path = "../self_signed_certs/key.pem"
+tls_cert_path = "../self_signed_certs/cert.pem"
